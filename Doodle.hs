@@ -43,4 +43,3 @@ participate :: (Doodle d, Show (d t)) => String -> d t -> IO (d t)
 participate n d = putStrLn (show d) >> prompt "Toogle a slot?" (participate n d) f
   where f Nothing  = putStrLn "Thanks for participating!" >> return d
         f (Just i) = participate n (toogle n i d) 
-
